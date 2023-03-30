@@ -50,8 +50,7 @@
 
 
 <div class ="container">
-<h1>Please fill out the form</h1>
-    {%  if form_submitted %}
+ {%  if form_submitted %}
         <div class="col-12">
             <h2> Thank you for submitting my form!</h2>
         </div>
@@ -59,7 +58,7 @@
             <p> First Name:</p>
         </div>
         <div class="col-md-6">
-            <p> {{ request.form.get('fname')}}</p>
+            <p> {{ request.contact.get('fname')}}</p>
         </div>
         <div class="col-md-6">
             <p> Last Name:</p>
