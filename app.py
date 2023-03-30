@@ -21,8 +21,8 @@ def fav():
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    if request.methos == 'POST':
-        print('First name entered: ' + request.form.get('first_name'))
+    if request.method == 'POST':
+        return render_template('contact.html', form_submitted = True)
     else:
         return render_template('contact.html')
 
