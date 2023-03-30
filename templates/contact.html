@@ -16,8 +16,8 @@
 </head>
 <body>
 
-<div class ="container">
-<h1>Please fill out the form</h1>
+    <div class ="container">
+    <h1>Please fill out the form</h1>
 
         <form class="row g-3" action="{{ url_for('contact') }}" method="post">
             <div class="col-md-6">
@@ -46,8 +46,40 @@
             <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
-</div>
+    </div>
 
+
+<div class ="container">
+<h1>Please fill out the form</h1>
+    {%  if form_submitted %}
+        <div class="col-12">
+            <h2> Thank you for submitting my form!</h2>
+        </div>
+        <div class="col-md-6">
+            <p> First Name:</p>
+        </div>
+        <div class="col-md-6">
+            <p> {{ request.form.get('fname')}}</p>
+        </div>
+        <div class="col-md-6">
+            <p> Last Name:</p>
+        </div>
+        <div class="col-md-6">
+            <p> {{ request.form.get('lname')}}</p>
+        </div>
+        <div class="col-md-6">
+            <p> Email Address:</p>
+        </div>
+        <div class="col-md-6">
+            <p> {{ request.form.get('email')}}</p>
+        </div>
+        <div class="col-md-6">
+            <p> Phone Number:</p>
+        </div>
+        <div class="col-md-6">
+            <p> {{ request.form.get('phone') }}</p>
+        </div>
+        <p><a href="{{ url_for('contact') }}"> Complete form again </a>
 
 
 </body>
