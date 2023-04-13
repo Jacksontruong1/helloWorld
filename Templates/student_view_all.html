@@ -19,6 +19,7 @@
             <th>First Name</th>
             <th>Email</th>
             <th>Major</th>
+
             <th>Is Honors?</th>
             {% if current_user.role in ['ADMIN', 'MANAGER'] %}
             <th>Actions</th>
@@ -61,5 +62,3 @@
     {% endif %}
 
 {% endblock %}
-
-

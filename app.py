@@ -27,6 +27,10 @@ def load_user(user_id):
 def home():
     return redirect(url_for('login'))
 
+@app.before_first_request
+def create_tables():
+     db.create_all()
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -227,7 +231,5 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 
-
 if __name__ == '__main__':
     app.run(debug=True)
-
